@@ -1,0 +1,9 @@
+[Unit]
+Description=Create a daily tmp directory
+
+[Service]
+Type=oneshot
+ExecStart=%h/.local/bin/tmp-today
+
+[Install]
+WantedBy=default.target

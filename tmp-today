@@ -1,0 +1,17 @@
+#!/bin/bash
+
+date=`date +%Y-%m-%d-%a`
+basedir=$HOME/tmp
+
+if [ -e "$basedir/$date" ]; then
+    exit 0
+fi
+
+mkdir -p $basedir/$date
+
+pushd $basedir
+rm -f yesterday
+mv today yesterday
+ln -sf $date today
+popd
+
